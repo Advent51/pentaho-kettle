@@ -421,4 +421,20 @@ public class ScriptDummy implements StepInterface {
     // TODO Auto-generated method stub
 
   }
+
+  public void addRowSetToInputRowSets( RowSet rowSet ) {
+
+  }
+
+  public void addRowSetToOutputRowSets( RowSet rowSet ) {
+
+  }
+
+  public void setRowSetInInputRowSets( int index, RowSet rowSet ) {
+
+  }
+
+  public void setRowSetInOutputRowSets( int index, RowSet rowSet ) {
+
+  }
 }

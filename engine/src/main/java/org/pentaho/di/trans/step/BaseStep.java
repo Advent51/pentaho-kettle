@@ -4204,5 +4204,29 @@ public class BaseStep implements VariableSpace, StepInterface, LoggingObjectInte
     }
 
   }
+
+  public void addRowSetToInputRowSets( RowSet rowSet ) {
+    synchronized ( inputRowSets ) {
+      inputRowSets.add( rowSet );
+    }
+  }
+
+  public void addRowSetToOutputRowSets( RowSet rowSet ) {
+    synchronized ( outputRowSets ) {
+      outputRowSets.add( rowSet );
+    }
+  }
+
+  public void setRowSetInInputRowSets( int index, RowSet rowSet ) {
+    synchronized ( inputRowSets ) {
+      inputRowSets.set( index, rowSet );
+    }
+  }
+
+  public void setRowSetInOutputRowSets( int index, RowSet rowSet ) {
+    synchronized ( outputRowSets ) {
+      outputRowSets.set( index, rowSet );
+    }
+  }
 }
 

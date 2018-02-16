@@ -2,7 +2,7 @@
  *
  * Pentaho Data Integration
  *
- * Copyright (C) 2002-2017 by Hitachi Vantara : http://www.pentaho.com
+ * Copyright (C) 2002-2018 by Hitachi Vantara : http://www.pentaho.com
  *
  *******************************************************************************
  *
@@ -253,8 +253,8 @@ public class XMLJoin extends BaseStep implements StepInterface {
           // swap this one and position 0...that means, the main stream is always stream 0 --> easy!
           //
           BlockingRowSet zero = (BlockingRowSet) getInputRowSets().get( 0 );
-          getInputRowSets().set( 0, rs );
-          getInputRowSets().set( i, zero );
+          setRowSetInOutputRowSets( 0, rs );
+          setRowSetInOutputRowSets( i, zero );
         }
       }
     } catch ( Exception e ) {

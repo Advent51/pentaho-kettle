@@ -2,7 +2,7 @@
  *
  * Pentaho Data Integration
  *
- * Copyright (C) 2002-2017 by Hitachi Vantara : http://www.pentaho.com
+ * Copyright (C) 2002-2018 by Hitachi Vantara : http://www.pentaho.com
  *
  *******************************************************************************
  *
@@ -88,8 +88,8 @@ public class JoinRows extends BaseStep implements StepInterface {
           // That means, the main stream is always stream 0 --> easy!
           //
           RowSet zero = getInputRowSets().get( 0 );
-          getInputRowSets().set( 0, rs );
-          getInputRowSets().set( i, zero );
+          setRowSetInInputRowSets( 0, rs );
+          setRowSetInInputRowSets( i, zero );
         }
       }
 

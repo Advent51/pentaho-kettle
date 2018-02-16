@@ -2,7 +2,7 @@
  *
  * Pentaho Data Integration
  *
- * Copyright (C) 2002-2017 by Hitachi Vantara : http://www.pentaho.com
+ * Copyright (C) 2002-2018 by Hitachi Vantara : http://www.pentaho.com
  *
  *******************************************************************************
  *
@@ -62,7 +62,7 @@ public class AbortTest {
         stepMockHelper.stepMeta, stepMockHelper.stepDataInterface, 0, stepMockHelper.transMeta,
         stepMockHelper.trans );
     abort.init( stepMockHelper.initStepMetaInterface, stepMockHelper.initStepDataInterface );
-    abort.getInputRowSets().add( stepMockHelper.getMockInputRowSet() );
+    abort.addRowSetToInputRowSets( stepMockHelper.getMockInputRowSet() );
     assertFalse( abort.isStopped() );
     abort.processRow( stepMockHelper.processRowsStepMetaInterface, stepMockHelper.processRowsStepDataInterface );
     verify( stepMockHelper.trans, never() ).stopAll();
@@ -76,7 +76,7 @@ public class AbortTest {
         stepMockHelper.stepMeta, stepMockHelper.stepDataInterface, 0, stepMockHelper.transMeta,
         stepMockHelper.trans );
     abort.init( stepMockHelper.initStepMetaInterface, stepMockHelper.initStepDataInterface );
-    abort.getInputRowSets().add( stepMockHelper.getMockInputRowSet( new Object[] {} ) );
+    abort.addRowSetToInputRowSets( stepMockHelper.getMockInputRowSet( new Object[] {} ) );
     assertFalse( abort.isStopped() );
     abort.processRow( stepMockHelper.processRowsStepMetaInterface, stepMockHelper.processRowsStepDataInterface );
     verify( stepMockHelper.trans, times( 1 ) ).stopAll();

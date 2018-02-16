@@ -2,7 +2,7 @@
  *
  * Pentaho Data Integration
  *
- * Copyright (C) 2002-2017 by Hitachi Vantara : http://www.pentaho.com
+ * Copyright (C) 2002-2018 by Hitachi Vantara : http://www.pentaho.com
  *
  *******************************************************************************
  *
@@ -95,7 +95,7 @@ public class Mapping extends BaseStep implements StepInterface {
               if ( mappingInputs.length == 1 ) {
                 // Simple case: only one input mapping. Move the RowSet over
                 //
-                mappingInputs[0].getInputRowSets().add( rowSet );
+                mappingInputs[0].addRowSetToInputRowSets( rowSet );
               } else {
                 // Difficult to see what's going on here.
                 // TODO: figure out where this RowSet needs to go and where it
@@ -150,7 +150,7 @@ public class Mapping extends BaseStep implements StepInterface {
               if ( mappingOutputs.length == 1 ) {
                 // Simple case: only one output mapping. Move the RowSet over
                 //
-                mappingOutputs[0].getOutputRowSets().add( rowSet );
+                mappingOutputs[0].addRowSetToOutputRowSets( rowSet );
               } else {
                 // Difficult to see what's going on here.
                 // TODO: figure out where this RowSet needs to go and where it
